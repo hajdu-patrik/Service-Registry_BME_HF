@@ -1,6 +1,6 @@
 # C++ Car Service Management System
 
-This is a comprehensive, menu-driven C++ console application developed for the "Programming Fundamentals 2" (Programozás alapjai 2.) course. It simulates a complete management system for a car service station, allowing for the tracking of clients, vehicles, and their detailed, polymorphic service histories.
+This is a comprehensive, menu-driven C++ console application developed for the "Programming Fundamentals 2" course. It simulates a complete management system for a car service station, allowing for the tracking of clients, vehicles, and their detailed, polymorphic service histories.
 
 The project is built from scratch in C++ and serves as a practical demonstration of core object-oriented programming (OOP) principles, dynamic memory management, and custom data structures.
 
