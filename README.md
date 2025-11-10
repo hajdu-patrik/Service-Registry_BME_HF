@@ -52,5 +52,3 @@ The system saves and loads data using two custom `.txt` file formats:
 * **Auto File (`*_auo.txt`):** Stores vehicle and service data.
     * *Format:* `rendszam-marka-tipus-km_ora-uzembe_helyezes_datuma-szervizmuveletek-tulajdonos_nev`
     * The `szervizmuveletek` field is a complex, semi-colon-delimited list of polymorphic service records.
-
-*(User: A build/használat részhez add hozzá a saját fordítási lépéseidet, pl. CMake, g++, stb.)*
