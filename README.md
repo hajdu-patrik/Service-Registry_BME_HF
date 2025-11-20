@@ -4,7 +4,7 @@ This is a comprehensive, menu-driven C++ console application developed for the "
 
 The project is built from scratch in C++ and serves as a practical demonstration of core object-oriented programming (OOP) principles, dynamic memory management, and custom data structures.
 
-## 🌟 Core Features
+## 📚 Features
 
 * **Client & Vehicle Management:** Full CRUD (Create, Read, Update, Delete) operations for clients and their associated vehicles.
 * **Detailed Service History:** Track all service events (Repairs, Maintenance, Technical Inspections) linked to a specific vehicle.
@@ -12,7 +12,7 @@ The project is built from scratch in C++ and serves as a practical demonstration
 * **Persistent Storage:** Save the entire system state (all clients, cars, and histories) to custom-formatted `.txt` files and load them back at runtime.
 * **Text-Based UI (TUI):** A user-friendly, menu-driven console interface for all operations, with clear ASCII-art branding.
 
-## 🛠️ Technical Implementation & OOP Concepts
+## 🛠️ Technical Implementation
 
 This project was built to demonstrate proficiency in C++ and object-oriented design. The key technical features are:
 
@@ -42,6 +42,55 @@ The use of raw pointers (`VegzettMuvelet*` in the `Vector`) necessitates careful
 The system is validated using:
 * **GTest-lite:** A lightweight testing framework is used for functional tests, covering adding, updating, deleting, and searching for clients, cars, and service records.
 * **Interface Tests:** The `teszt.cpp` file contains basic interface-level tests to ensure all public methods are callable as specified.
+
+---
+
+## 📂 Modular Folder Structure
+To enforce clarity and the separation of concerns (OOP principle), the project uses a standard, modular directory layout:
+- **`src/`:** Contains all C++ implementation files (`.cpp`). This is where the core logic resides (e.g., `Auto.cpp`, `Ugyfel.cpp`, `Memtrace.cpp`).
+- **`include/`:** Contains all public header files (`.h`, `.hpp`). This defines the interfaces and data structures used throughout the project (e.g., `Auto.h,` `Vector.hpp`).
+- **`data/`:** Stores input files for persistence, like initial client or vehicle data (`init_ugyfel_ufl.txt`, `init_auto_auo.txt`).
+- **`build/`:** The target output directory for all generated files (object files and the final executable).
+- **C`MakeLists.txt`:** The configuration file for the CMake build system (Recommended Build Tool).
+
+---
+
+## ⚙️ Compilation & Execution
+
+The recommended tool for C++ projects is **CMake**, but due to potential environment issues (e.g., missing `make` in MINGW/Git Bash), a direct **g++** compilation method is also provided.
+
+### A. Standard Method (Using CMake)
+The project is configured for CMake, the industry standard for generating platform-independent build files
+
+1.  **Generate Build Files**: Execute this from the project root directory.
+```bash
+mkdir build
+cd build
+cmake ..
+```
+
+2.  **Build:** Compile the application (assuming Makefiles were generated).
+```bash
+make
+# The final executable is named 'szerviz_app' and is placed in the 'build' folder.
+```
+
+### B. Direct GCC/G++ Compilation (Fallback Method)
+This is the most reliable method in minimal environments. It explicitly links all source files and enables the necessary features.
+
+1.  **Prerequisites:** The build/ directory must exist.
+
+2.  **Compile and Link:** Execute the command from the project root. The -DMEMTRACE flag is required to enable the memory leak detector.
+```bash
+g++ -Wall -Wextra -std=c++11 -g -Iinclude -DMEMTRACE src/Applikacio.cpp src/Auto.cpp src/Datum.cpp src/Main.cpp src/MainSegedFuggvenyek.cpp src/Memtrace.cpp src/SzervizNyilvantartoRendszer.cpp src/Teszt.cpp src/Ugyfel.cpp -o build/szerviz_app.exe -lstdc++
+```
+
+3.  **Run Application:**
+```bash
+./build/szerviz_app.exe
+```
+
+---
 
 ## 💾 File-Based Persistence
 
